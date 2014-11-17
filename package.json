@@ -1,0 +1,25 @@
+{
+  "name": "TDD-train",
+  "version": "1.0.0",
+  "description": "TDD practices ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aikin/TDD-train.git"
+  },
+  "keywords": [
+    "TDD"
+  ],
+  "author": "aikin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aikin/TDD-train/issues"
+  },
+  "homepage": "https://github.com/aikin/TDD-train",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
