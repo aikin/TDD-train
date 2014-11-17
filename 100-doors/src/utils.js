@@ -21,6 +21,13 @@ function countFactor(num) {
     return factor;
 }
 
+function floorAfterSqrt(num) {
+
+    if (typeof num !== 'number') return 'please input number';
+    return Math.floor(Math.sqrt(num));
+}
+
 module.exports = {
-    countFactor: countFactor
+    countFactor    : countFactor,
+    floorAfterSqrt : floorAfterSqrt
 };
