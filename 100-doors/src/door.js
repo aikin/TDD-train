@@ -9,12 +9,24 @@ function door(count, utils) {
 
     var result = { opened: [], closed: [] };
 
-    for (var i = 1; i <= count; i++) {
-        if (utils.countFactor(i) % 2 !== 0) {
-            result.opened.push(i)
-        } else {
-            result.closed.push(i);
+    for (var i = 1; i <= utils.floorAfterSqrt(count); i++) {
+        result.opened.push(i * i);
+    }
+
+
+    var openedDoors = result.opened.concat();
+    var shiftOpened = null;
+
+    for (var j = 0; j < count; j++) {
+
+        if (shiftOpened === null) {
+            shiftOpened = openedDoors.shift();
         }
+        if(shiftOpened === j + 1) {
+            shiftOpened = null;
+            continue;
+        }
+        result.closed.push(j + 1);
     }
 
     return result;
