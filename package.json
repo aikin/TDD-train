@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/aikin/TDD-train",
   "devDependencies": {
-    "jasmine-node": "^1.14.5"
+    "chai": "^1.10.0",
+    "jasmine-node": "^1.14.5",
+    "mocha": "^2.0.1"
   }
 }
