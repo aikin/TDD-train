@@ -11,7 +11,7 @@ describe('test anagrams', function() {
         anagrams('').should.to.equal('input string must not be empty.');
     });
 
-    it('should return all potential anagrams', function() {
+    it('should return all potential anagrams when input word not be same with each other', function() {
 
         anagrams('a').should.to.eql(['a']);
         anagrams('ai').should.to.have.length(2);
@@ -28,6 +28,13 @@ describe('test anagrams', function() {
         ];
         anagrams('biro').should.to.have.length(expect.length);
         anagrams('biro').should.to.eql(expect);
-
     });
+
+    it('should return all potential anagrams when input word be same', function() {
+
+        anagrams('aa').should.to.eql(['aa']);
+        anagrams('aia').should.to.have.length(3);
+        anagrams('aia').should.to.eql(['aia', 'aai', 'iaa']);
+    });
+
 });
