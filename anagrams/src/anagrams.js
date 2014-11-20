@@ -14,19 +14,33 @@ function anagrams(word) {
         letters[letterIndex] = tmp;
     }
 
+    function isSwap(letters, letterEnd, letterBegin) {
+        for (var i = letterBegin; i < letterEnd; i++) {
+            if (letters[i] === letters[letterEnd]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     (function permute(letterIndex) {
 
         for (var i = letterIndex, lettersLength = letters.length; i < lettersLength; i++) {
 
-            swap(letters, i, letterIndex);
+            if (isSwap(letters, i, letterIndex)) {
 
-            if (letterIndex + 1 < lettersLength) {
-                permute(letterIndex + 1);
-            } else {
-                result.push(letters.join(''));
+                swap(letters, i, letterIndex);
+
+                if (letterIndex + 1 < lettersLength) {
+                    permute(letterIndex + 1);
+                }
+                else {
+                    result.push(letters.join(''));
+                }
+
+                swap(letters, i, letterIndex);
             }
 
-            swap(letters, i, letterIndex);
         }
     }(0));
 

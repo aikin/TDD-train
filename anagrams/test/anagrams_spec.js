@@ -35,6 +35,9 @@ describe('test anagrams', function() {
         anagrams('aa').should.to.eql(['aa']);
         anagrams('aia').should.to.have.length(3);
         anagrams('aia').should.to.eql(['aia', 'aai', 'iaa']);
+        anagrams('kkn').should.to.eql(['kkn', 'knk', 'nkk']);
+        anagrams('122').should.to.eql(['122', '212', '221']);
+        anagrams('212').should.to.eql(['212', '221', '122']);
     });
 
 });
