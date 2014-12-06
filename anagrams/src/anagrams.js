@@ -21,7 +21,7 @@ function anagrams(word) {
             }
         }
         return true;
-    }
+    } // 中间有重复过.
 
     (function permute(letterIndex) {
 
@@ -45,7 +45,6 @@ function anagrams(word) {
     }(0));
 
     return result;
-
 }
 
 module.exports = anagrams;
