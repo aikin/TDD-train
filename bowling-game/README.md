@@ -65,3 +65,6 @@ Score for each frame == 10 + score for next one
 ball == 10 + 5 == 15
 Total score == 10 frames x 15 == 150
 
+### can see this intro 
+
+http://en.wikipedia.org/wiki/Ten-pin_bowling#Scoring
