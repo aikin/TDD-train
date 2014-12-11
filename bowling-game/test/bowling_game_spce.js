@@ -13,16 +13,11 @@ describe('test game', function() {
         game = null;
     });
 
-    it('', function() {
+    it('should return error when roll pins not be integer number', function() {
 
-    });
-
-    xit('should get 0 score when not knocks down pains on each 10 frames', function() {
-
-        for (var i = 0; i < 20; i++) {
-            game.roll(0);
-        }
-
+        expect(game.roll('aa')).to.equal('pins must be integer number type!');
+        expect(game.roll(true)).to.equal('pins must be integer number type!');
+        expect(game.roll(10.11)).to.equal('pins must be integer number type!');
     });
 
 });
