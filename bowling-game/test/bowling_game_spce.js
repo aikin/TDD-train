@@ -22,18 +22,23 @@ describe('test game', function() {
 
     it('should get 0 score when not knocks down pains on each 10 frames', function() {
 
-        for (var i = 0; i < 20; i++) {
-            game.roll(0);
-        }
+        rollSamePinsOnTimes(20, 0);
         expect(game.score()).to.equal(0);
     });
 
     it('should get 20 score when  knocks down pains be 1 on each 10 frames', function() {
 
-        for (var i = 0; i < 20; i++) {
-            game.roll(1);
-        }
+        rollSamePinsOnTimes(20, 1);
         expect(game.score()).to.equal(20);
     });
+
+
+
+
+    function rollSamePinsOnTimes(n, pins) {
+        for (var i = 0; i < n; i++) {
+            game.roll(pins)
+        }
+    }
 
 });
