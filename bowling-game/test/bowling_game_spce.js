@@ -20,16 +20,26 @@ describe('test game', function() {
         expect(game.roll(10.11)).to.equal('pins must be integer number type!');
     });
 
-    it('should get 0 score when not knocks down pains on each 10 frames', function() {
+    it('should get 0 score when not knocks down pins on each 10 frames', function() {
 
         rollSamePinsOnTimes(20, 0);
         expect(game.score()).to.equal(0);
     });
 
-    it('should get 20 score when  knocks down pains be 1 on each 10 frames', function() {
+    it('should get 20 score when  knocks down pins be 1 on each 10 frames', function() {
 
         rollSamePinsOnTimes(20, 1);
         expect(game.score()).to.equal(20);
+    });
+
+    it('should get 22 score when knocks down have 1 spare', function() {
+
+        game.roll(4);
+        game.roll(6);
+        game.roll(6);
+        rollSamePinsOnTimes(17, 0);
+
+        expect(game.score()).to.equal(22);
     });
 
 
