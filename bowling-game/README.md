@@ -68,3 +68,5 @@ Total score == 10 frames x 15 == 150
 ### can see this intro 
 
 http://en.wikipedia.org/wiki/Ten-pin_bowling#Scoring
+
+每三次，统计第一frame分数,后面的依次在第一个 frame 基础上加。

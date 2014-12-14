@@ -42,13 +42,19 @@ describe('test game', function() {
     });
 
 
-    it('should get 28 score when knocks down have 1 strike ', function() {
+    it('should get 28 score when knocks down have 1 strike', function() {
 
         rollStrike();
         game.roll(3);
         game.roll(5);
         rollSamePinsOnTimes(16, 0);
         expect(game.score()).to.equal(26);
+    });
+
+    it('should get 300 when knocks down perfect', function() {
+
+        rollSamePinsOnTimes(12, 10);
+        expect(game.score()).to.equal(300);
     });
 
 
