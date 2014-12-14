@@ -42,9 +42,14 @@ describe('test game', function() {
     });
 
 
-//    it('should ', function() {
-//
-//    });
+    it('should get 28 score when knocks down have 1 strike ', function() {
+
+        rollStrike();
+        game.roll(3);
+        game.roll(5);
+        rollSamePinsOnTimes(16, 0);
+        expect(game.score()).to.equal(26);
+    });
 
 
     function rollSamePinsOnTimes(n, pins) {
@@ -56,6 +61,10 @@ describe('test game', function() {
     function rollSpare() {
         game.roll(4);
         game.roll(6);
+    }
+
+    function rollStrike() {
+        game.roll(10);
     }
 
 });
