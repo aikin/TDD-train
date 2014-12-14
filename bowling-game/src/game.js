@@ -20,7 +20,7 @@ Game.prototype.score = function() {
     var frameIndex = 0;
 
     for (var frame = 0; frame < 10; frame++) {
-        if (this._rolls[frameIndex] + this._rolls[frameIndex + 1] === 10) {
+        if (this._isSpare(frameIndex)) {
             score += 10 + this._rolls[frameIndex + 2];
             frameIndex += 2;
         } else {
@@ -29,6 +29,10 @@ Game.prototype.score = function() {
         }
     }
     return score;
+};
+
+Game.prototype._isSpare = function(frameIndex) {
+    return this._rolls[frameIndex] + this._rolls[frameIndex + 1] === 10;
 };
 
 
