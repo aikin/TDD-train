@@ -34,8 +34,7 @@ describe('test game', function() {
 
     it('should get 22 score when knocks down have 1 spare', function() {
 
-        game.roll(4);
-        game.roll(6);
+        rollSpare();
         game.roll(6);
         rollSamePinsOnTimes(17, 0);
 
@@ -43,12 +42,20 @@ describe('test game', function() {
     });
 
 
+//    it('should ', function() {
+//
+//    });
 
 
     function rollSamePinsOnTimes(n, pins) {
         for (var i = 0; i < n; i++) {
             game.roll(pins)
         }
+    }
+
+    function rollSpare() {
+        game.roll(4);
+        game.roll(6);
     }
 
 });
