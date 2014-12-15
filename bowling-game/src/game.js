@@ -11,6 +11,14 @@ Game.prototype.roll = function(pins) {
         return 'pins must be integer number type!';
     }
 
+    if (pins > 10) {
+        return 'pins must be less than 10';
+    }
+
+    if ( this._currentRoll % 2 && this._rolls[this._currentRoll - 1] < 10 && this._rolls[this._currentRoll - 1] + pins > 10) {
+        return 'twice pins addition must less 10';
+    }
+
     this._rolls[this._currentRoll++] = pins;
 };
 

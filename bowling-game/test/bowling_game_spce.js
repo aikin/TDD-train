@@ -57,6 +57,17 @@ describe('test game', function() {
         expect(game.score()).to.equal(300);
     });
 
+    it('should throw error when once roll pins more than 10', function() {
+
+        expect(game.roll(11)).to.equal('pins must be less than 10');
+    });
+
+    it('should throw error when twice addition than 10', function() {
+
+        game.roll(7);
+        expect(game.roll(7)).to.equal('twice pins addition must less 10');
+    });
+
 
     function rollSamePinsOnTimes(n, pins) {
         for (var i = 0; i < n; i++) {
